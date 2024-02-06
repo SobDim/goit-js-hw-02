@@ -13,7 +13,14 @@
 Якщо в рядку відсутні заборонені слова, функція повертає буль false
 */
 
-function checkForSpam(message) {}
+function checkForSpam(message) {
+  const messageLowerCase = message.toLowerCase();
+  if (messageLowerCase.includes('spam') || messageLowerCase.includes('sale')) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 console.log(checkForSpam('Latest technology news')); // false
 console.log(checkForSpam('JavaScript weekly newsletter')); // false
