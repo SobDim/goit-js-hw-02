@@ -22,27 +22,30 @@ Jamaica — 120 кредитів
 "Sorry, there is no delivery to your country".
 */
 
-getShippingCost(country);
+function getShippingCost(country) {
+  let price = 0;
 
-const price = 0;
+  const countryUpperCase = country.toUpperCase();
 
-const country = country.toUpperCase();
-switch (country) {
-  case 'CHINA':
-    price = 100;
-    break;
-  case 'CHILE':
-    price = 250;
-    break;
-  case 'AUSTRALIA':
-    price = 170;
-    break;
-  case 'JAMAICA':
-    price = 120;
-    break;
-  default:
-    price = 'Sorry, there is no delivery to your country';
+  switch (countryUpperCase) {
+    case 'CHINA':
+      price = 100;
+      break;
+    case 'CHILE':
+      price = 250;
+      break;
+    case 'AUSTRALIA':
+      price = 170;
+      break;
+    case 'Jamaica':
+      price = 120;
+      break;
+    default:
+      return 'Sorry, there is no delivery to your country';
+  }
+  return `Shipping to ${country} will cost ${price} credits`;
 }
+
 console.log(getShippingCost('Australia')); // "Shipping to Australia will cost 170 credits"
 console.log(getShippingCost('Germany')); // "Sorry, there is no delivery to your country"
 console.log(getShippingCost('China')); // "Shipping to China will cost 100 credits"
